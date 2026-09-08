@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SG Bakery</title>
-
-    <style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Home | SG Bakery</title><style>
 
         /* =========================
            GENERAL
@@ -24,7 +16,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #fff8ed;
+            background: linear-gradient(180deg, #fff8ed 0%, #fffaf3 45%, #fffdf8 100%);
             color: #4a2d22;
         }
 
@@ -48,7 +40,7 @@
 
             padding: 0 7%;
 
-            background: #fff8ed;
+            background: rgba(255,248,237,0.92);
 
             border-bottom: 1px solid #eadccd;
 
@@ -278,7 +270,7 @@
         ========================= */
 
         .products {
-            background: #fffdf8;
+            background: transparent;
 
             padding: 100px 8%;
         }
@@ -432,7 +424,7 @@
         .about {
             padding: 100px 8%;
 
-            background: #f6e5d1;
+            background: linear-gradient(180deg, rgba(246,229,209,0.65), rgba(255,248,237,0.35));
 
             display: grid;
 
@@ -507,7 +499,7 @@
 
             text-align: center;
 
-            background: #e8753d;
+            background: linear-gradient(135deg, #e8753d, #d95f2c);
 
             color: white;
         }
@@ -571,6 +563,58 @@
             color: #d8c4b5;
         }
 
+
+        /* =========================
+           REAL SG BAKERY MENU
+        ========================= */
+
+        .real-menu-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .menu-card {
+            display: block;
+            color: inherit;
+        }
+
+        .menu-photo {
+            height: 270px;
+            padding: 0;
+            background: #f7eadb;
+            overflow: hidden;
+        }
+
+        .menu-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .menu-card:hover .menu-photo img {
+            transform: scale(1.05);
+        }
+
+        .menu-label {
+            color: #e8753d;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            margin-bottom: 8px;
+        }
+
+        .menu-link {
+            color: #e8753d;
+            font-weight: 800;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 1050px) {
+            .real-menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
         /* =========================
            MOBILE
@@ -675,396 +719,88 @@
             }
         }
 
-    </style>
-</head>
+    
+        /* INTERNAL MENU VIEWER */
+        .menu-viewer {
+            display: none;
+            margin: 40px auto 0;
+            max-width: 1100px;
+            padding: 32px;
+            border-radius: 24px;
+            background: rgba(255,255,255,.78);
+            box-shadow: 0 14px 45px rgba(74,45,34,.10);
+            border: 1px solid rgba(74,45,34,.10);
+        }
+        .menu-viewer.active { display: block; }
+        .menu-viewer-head { display:flex; justify-content:space-between; gap:20px; align-items:center; margin-bottom:22px; }
+        .menu-viewer h2 { margin:0; }
+        .menu-close { border:0; background:#4a2d22; color:#fff; padding:10px 16px; border-radius:999px; cursor:pointer; }
+        .menu-viewer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+        .menu-item { background:#fffaf3; border-radius:18px; padding:18px; border:1px solid rgba(74,45,34,.08); }
+        .menu-item strong { display:block; margin-bottom:6px; }
+        .menu-item p { margin:0; opacity:.78; line-height:1.5; }
+        @media(max-width:750px){ .menu-viewer{padding:22px}.menu-viewer-grid{grid-template-columns:1fr}.menu-viewer-head{align-items:flex-start} }
 
-
-<body>
-
-
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
-
-    <header>
-
-        <div class="logo">
-            SG<span>Bakery</span>
-        </div>
-
-        <nav>
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#products">
-                Our Bakes
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-        <a href="#products" class="order-button">
-            Order Now
-        </a>
-
-    </header>
-
-
-
-    <!-- =========================
-         HOMEPAGE / HERO
-    ========================= -->
-
-    <section class="hero" id="home">
-
-        <div>
-
-            <div class="small-title">
+    
+/* ABOUT + CONTACT HOMEPAGE SECTIONS */
+.page-content{padding:70px 8%;max-width:1200px;margin:auto}.about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.content-card{background:white;border:1px solid #eadccd;border-radius:24px;padding:35px;box-shadow:0 15px 35px rgba(0,0,0,.07)}.content-card h2{margin-bottom:15px}.content-card p{color:#806e65;line-height:1.8;margin-bottom:14px}.contact-list{list-style:none;display:grid;gap:16px;margin-top:20px}.contact-list li{background:#fff8ed;padding:18px;border-radius:15px}.contact-form{display:grid;gap:15px}.contact-form input,.contact-form textarea{width:100%;padding:15px;border:1px solid #d9c9bc;border-radius:12px;font:inherit;background:#fffdf9}.contact-form textarea{min-height:140px;resize:vertical}.contact-form button{border:0;cursor:pointer;width:max-content}.section-divider{height:1px;background:#eadccd;margin:30px 0 20px}@media(max-width:800px){.about-grid,.contact-grid{grid-template-columns:1fr}.page-content{padding:60px 6%}}
+</style><style>.page-hero{padding:90px 8% 55px;text-align:center}.page-hero h1{font-size:clamp(42px,6vw,72px);margin-bottom:18px}.page-hero p{max-width:720px;margin:auto;color:#806e65;font-size:18px;line-height:1.7}.page-content{padding:30px 8% 90px;max-width:1200px;margin:auto}.about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.content-card{background:white;border:1px solid #eadccd;border-radius:24px;padding:35px;box-shadow:0 15px 35px rgba(0,0,0,.07)}.content-card h2{margin-bottom:15px}.content-card p{color:#806e65;line-height:1.8;margin-bottom:14px}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}.stat{background:#fff8ed;border-radius:18px;padding:22px;text-align:center}.stat strong{display:block;font-size:26px;color:#e8753d;margin-bottom:5px}.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.menu-card{background:white;border:1px solid #eadccd;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.07)}.menu-card img{width:100%;height:210px;object-fit:cover;display:block}.menu-card-body{padding:22px}.menu-card-body p{color:#806e65;line-height:1.6;margin-bottom:16px}.menu-btn{display:inline-block;background:#4a2d22;color:white;padding:11px 17px;border-radius:25px;font-weight:bold}.menu-btn:hover{background:#e8753d}.menu-viewer{margin-top:35px;background:white;border:1px solid #eadccd;border-radius:24px;padding:30px;box-shadow:0 15px 35px rgba(0,0,0,.07);display:none}.menu-viewer:target{display:block}.close-menu{float:right;background:#4a2d22;color:white;padding:9px 15px;border-radius:20px}.contact-list{list-style:none;display:grid;gap:16px;margin-top:20px}.contact-list li{background:#fff8ed;padding:18px;border-radius:15px}.contact-form{display:grid;gap:15px}.contact-form input,.contact-form textarea{width:100%;padding:15px;border:1px solid #d9c9bc;border-radius:12px;font:inherit}.contact-form textarea{min-height:140px;resize:vertical}@media(max-width:800px){nav{gap:14px}.about-grid,.contact-grid,.menu-grid{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr}.order-button{display:none}}</style></head><body><header><a class="logo" href="homepage.html">SG <span>Bakery</span></a><nav><a href="homepage.html">Home</a><a href="menu.html">Our Bakes</a><a href="#about">About & Contact</a></nav><a class="order-button" href="#about">Order Now</a></header><main><section class="hero" id="home">
+<div>
+<div class="small-title">
                 BAKED FRESH EVERY DAY
             </div>
-
-            <h1>
+<h1>
                 Good days start with
                 <span>good baking.</span>
-            </h1>
-
-            <p>
+</h1>
+<p>
                 Fresh bread, buttery pastries and delicious
                 cakes made with quality ingredients and a
                 whole lot of love.
             </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#products"
-                    class="main-button"
-                >
+<div class="hero-buttons">
+<a class="main-button" href="#products">
                     Explore Our Bakes →
                 </a>
-
-                <a
-                    href="#about"
-                    class="secondary-button"
-                >
+<a class="secondary-button" href="#about">
                     Our Story
                 </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-image">
-
-            <div class="circle"></div>
-
-            <div class="bakery-item">
+</div>
+</div>
+<div class="hero-image">
+<div class="circle"></div>
+<div class="bakery-item">
                 🥐
             </div>
-
-            <div class="info-card card-one">
+<div class="info-card card-one">
 
                 🍞 <b>Fresh bread</b>
-
-                <small>
+<small>
                     Every morning
                 </small>
-
-            </div>
-
-            <div class="info-card card-two">
+</div>
+<div class="info-card card-two">
 
                 🧁 <b>Sweet treats</b>
-
-                <small>
+<small>
                     Made with love
                 </small>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         PRODUCTS
-    ========================= -->
-
-    <section class="products" id="products">
-
-        <div class="section-title">
-
-            <div class="small-title">
-                OUR FAVOURITES
-            </div>
-
-            <h2>
-                Fresh from the oven.
-            </h2>
-
-            <p>
-                From flaky pastries to delicious cakes,
-                there's something for every craving.
-            </p>
-
-        </div>
-
-
-        <div class="products-grid">
-
-
-            <div class="product">
-
-                <div class="product-picture">
-                    🥐
-                </div>
-
-                <div class="product-content">
-
-                    <h3>
-                        Butter Croissant
-                    </h3>
-
-                    <p>
-                        Golden, flaky and baked fresh
-                        every morning.
-                    </p>
-
-                    <div class="price">
-                        $5.50
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="product">
-
-                <div class="product-picture">
-                    🍰
-                </div>
-
-                <div class="product-content">
-
-                    <h3>
-                        Strawberry Dream
-                    </h3>
-
-                    <p>
-                        Soft vanilla sponge, cream and
-                        fresh strawberries.
-                    </p>
-
-                    <div class="price">
-                        $8.50
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="product">
-
-                <div class="product-picture">
-                    🍪
-                </div>
-
-                <div class="product-content">
-
-                    <h3>
-                        Choc Chip Cookie
-                    </h3>
-
-                    <p>
-                        Crunchy edges, gooey centre and
-                        plenty of chocolate.
-                    </p>
-
-                    <div class="price">
-                        $4.00
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <button
-            class="special-button"
-            onclick="showSpecial()"
-        >
-            Show Today's Special ✨
-        </button>
-
-        <div id="special"></div>
-
-    </section>
-
-
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section class="about" id="about">
-
-        <div class="about-image">
-            🥖
-        </div>
-
-        <div>
-
-            <div class="small-title">
-                THE SG STORY
-            </div>
-
-            <h2>
-                Simple ingredients.
-                Seriously good baking.
-            </h2>
-
-            <p>
-                SG Bakery started with one simple idea:
-                make bakery favourites that taste homemade.
-                Every morning, our bakers mix, shape and
-                bake in small batches so you get that
-                just-baked feeling every time.
-            </p>
-
-
-            <div class="stats">
-
-                <div class="stat">
-
-                    <strong>
-                        10+
-                    </strong>
-
-                    <span>
-                        Years baking
-                    </span>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <strong>
-                        100%
-                    </strong>
-
-                    <span>
-                        Fresh daily
-                    </span>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <strong>
-                        ∞
-                    </strong>
-
-                    <span>
-                        Good vibes
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
-
-    <section class="contact" id="contact">
-
-        <div class="small-title">
-            COME SAY HI
-        </div>
-
-        <h2>
-            Your next favourite
-            bake is waiting.
-        </h2>
-
-        <p>
-            Visit SG Bakery, grab a coffee
-            and treat yourself.
-        </p>
-
-        <a
-            href="mailto:hello@sgbakery.com"
-            class="contact-button"
-        >
-            Get in touch →
-        </a>
-
-    </section>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
-
-        <div class="logo">
+</div>
+</div>
+</section><section class="about" style="padding:80px 8%;text-align:center"><div class="small-title">SG BAKERY</div><h2>Freshly baked. Always delicious.</h2><p style="max-width:650px;margin:15px auto 25px;color:#806e65;line-height:1.7">Explore our bakes, learn our story, or get in touch with us.</p><a class="main-button" href="menu.html">View Our Menu →</a></section><section class="page-content" id="about">
+<div class="about-grid"><div class="content-card"><div class="small-title">ABOUT OUR BAKERY</div><h2>Made with care. Made to share. 🥖</h2><p>SG Bakery started with one simple idea: make bakery favourites that taste homemade.</p><p>Every morning, our bakers mix, shape and bake fresh treats so you can enjoy that just-baked feeling.</p><p>From breakfast favourites and Vietnamese signatures to cakes, finger food and drinks, there is something for every occasion.</p></div><div class="content-card"><div class="small-title">WHY SG BAKERY?</div><h2>Simple ingredients. Seriously good baking.</h2><p>We keep things simple: fresh food, good ingredients and a welcoming bakery experience.</p><p>Whether you're grabbing something for breakfast, planning a celebration or feeding a crowd, SG Bakery has you covered.</p></div></div>
+<div class="section-divider"></div>
+</section>
+<section class="page-content" id="contact"><div class="page-hero" style="padding:0 0 35px"><div class="small-title">GET IN TOUCH</div><h2 style="font-size:clamp(36px,5vw,56px);margin-bottom:15px">Come say <span>hi.</span></h2><p>Have a question, want to enquire about an order, or just want to say hello? Send us a message.</p></div>
+<div class="contact-grid"><div class="content-card"><h2>Contact SG Bakery 🧁</h2><ul class="contact-list"><li><strong>📍 Visit us</strong><br>SG Bakery</li><li><strong>📞 Phone</strong><br>Contact the bakery directly for enquiries.</li><li><strong>✉️ Email</strong><br>Send us a message using the form.</li></ul></div><div class="content-card"><h2>Send a message</h2><form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! Your message has been received.');"><input type="text" placeholder="Your name" required><input type="email" placeholder="Your email" required><textarea placeholder="Your message" required></textarea><button class="main-button" type="submit">Send Message →</button></form></div></div><a class="back-home" href="homepage.html">← Back to homepage</a></section>
+</main><footer>
+<div class="logo">
             SG<span>Bakery</span>
-        </div>
-
-        <p>
+</div>
+<p>
             Freshly baked. Always delicious.
         </p>
-
-        <p>
+<p>
             © 2026 SG Bakery
         </p>
-
-    </footer>
-
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
-
-    <script>
-
-        function showSpecial() {
-
-            document.getElementById("special").innerHTML =
-                "🔥 Today's special: Warm cinnamon scrolls — $4.50 each!";
-
-        }
-
-    </script>
-
-</body>
-</html>
+</footer></body></html>
